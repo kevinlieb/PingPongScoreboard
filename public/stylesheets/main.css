@@ -26,7 +26,7 @@ button {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 0;
+  border: 0px;
   border-radius:2px;
   height: 36px;
   white-space: nowrap;
@@ -34,4 +34,37 @@ button {
   background-color: #1A9BFC;
   font-family: Helvetica;
   padding: 8px 24px;
+}
+
+.button-increment {
+	background-color: #5bb75b;
+	font-size: 20pt;
+	width: 30%;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.button-decrement {
+	background-color: #D23A2C;
+	font-size: 20pt;
+	width: 30%;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.score-container {
+	text-align: center;
+	display:table-cell;
+	vertical-align:middle;
+}
+.score-cell {
+    width: 300px;
+    vertical-align: middle;
+}
+.aligned-cells {
+	display: inline-block;
+}
+
+.score {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-size: 50pt;
 }
