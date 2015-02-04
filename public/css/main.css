@@ -9,3 +9,8 @@ div{
 .hidden{
 	display: none;
 }
+
+.link{
+	text-decoration: underline;
+	color: blue;
+}
