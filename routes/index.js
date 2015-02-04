@@ -14,20 +14,55 @@ router.get('/', function (req, res, next) {
 });
 */
 
-router.get('/score/game_id', function (req, res, next) {
-	console.log('do2');
-	var score = {};
-	score.P1 = 7;
-	score.P2 = 1;
-	res.send(score);
+router.get('/score/:game_id', function (req, res, next) {
+	res.send(gamesList[req.params.game_id]);
 });
 
-router.post('/score/game_id', function (req, res) {
-	console.log('post score');
-	console.log(req.body);
-	res.send({
-		"ok": true
-	});
+router.post('/score/:game_id', function (req, res) {
+	var response = 'fail';
+		game = gamesList[req.params.game_id];
+	if (req.body.P1) {
+		response = 'P1 ';
+		if (req.body.P1 === '+') {
+			game.P1++;
+			response = response + '+';
+		} else if (req.body.P1 === '-') {
+			game.P1--;
+			response = response + '-';
+		}
+	} else if (req.body.P2) {
+		response = 'P2 ';
+		if (req.body.P2 === '+') {
+			game.P2++;
+			response = response + '+';
+		} else if (req.body.P2 === '-') {
+			game.P2--;
+			response = response + '-';
+		}
+	} else if (req.body.reset) {
+		game.scoreBeforeReset = {
+			P1: game.P1,
+			P2: game.P2
+		}
+		game.P1 = 0;
+		game.P2 = 0;
+		response = 'reset';
+	} else if (req.body.undoReset) {
+		if (game.scoreBeforeReset) {
+			game.P1 = game.scoreBeforeReset.P1;
+			game.P2 = game.scoreBeforeReset.P2;
+			response = 'undo reset';
+		}
+	}
+	if (response === 'fail') {
+		res.send({
+			"ok": false
+		});
+	} else {
+		res.send({
+			"ok": response
+		});	
+	}
 });
 
 router.get('/list', function (req, res) {
@@ -35,14 +70,12 @@ router.get('/list', function (req, res) {
 });
 
 router.put('/new', function (req, res) {
-	console.log('put new');
-	console.log(req.body);
 	var newGame = {};
-	newGame.id = gamesIndex + 1;
-	gamesIndex++;
+	newGame.id = gamesIndex;
 	newGame.P1 = 0;
 	newGame.P2 = 0;
-	gamesList.push(newGame);
+	gamesList[gamesIndex] = newGame;
+	gamesIndex++;
 	res.send({
 		"ok": newGame.id
 	});
