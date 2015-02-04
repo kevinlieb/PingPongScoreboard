@@ -1,11 +1,22 @@
-var a = 0;
-io.on('connection', function(socket){
-  setInterval(function () {spewCount()}, 3000);
+var express = require('express');
+var router = express.Router();
+
+router.get("/", function(rec, res, next) {
+  console.log("i am in SocketTest.js");
+
+  var a = 0;
+  io.on('connection', function(socket){
+    setInterval(function () {spewCount()}, 3000);
+  });
+
+
+  function spewCount() {
+    io.emit('count', a, {for: everyone});
+    a++;
+  }
 });
 
+module.exports = router;
 
-function spewCount() {
-  io.emit('count', a, {for: everyone});
-  a++;
-}
+
 
