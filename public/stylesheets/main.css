@@ -89,6 +89,7 @@ button:focus {
 }
 
 .phone-button-decrement {
+	font-size: 150pt;
 	border: 0px;
   	border-radius:2px;
 	background-color: #D23A2C;
