@@ -92,6 +92,12 @@ button:focus {
 	border: 1px black solid;
 }
 
+.button-undo {
+	color: black;
+	background-color: #fafafa;
+	border: 1px black solid;
+}
+
 .phone-button-decrement {
 	font-size: 150pt;
 	border: 0px;
