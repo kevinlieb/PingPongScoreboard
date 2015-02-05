@@ -10,18 +10,22 @@
     <header align="center">
         <h1>BR ScoreBoard</h1>
     </header>
-
         <div id="main_cont" class="container">
             <div id="new_game_cont" align="center" class="container">
                 <button>New Game</button>
             </div>
-
-            <div id="join_game_cont" class="container">
+            <div id="join_game_cont" class="container" align="center">
                 <h1>Join Game</h1>
                 <div id="join_game_list">
-                    <ul>
-                        <li class="joinLink link">game 103, currently 1 - 6</li>
-                    </ul>
+                    <table class="reference">
+                        <tbody class="join_game_container">
+                            <tr class="join_game_template">
+                                <td>
+                                    <a class="joinLink link">game 101, currently 0 - 0</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -31,9 +35,15 @@
             <div id="view_options_list">
                 <ul>
 <!--                    <li class="viewLink link" id="view_allTheThings">All The Things</li> -->
-                    <li class="viewLink link" id="view_scoreboard">Scoreboard</li>
-                    <li class="viewLink link" id="view_player1">Player 1</li>
-                    <li class="viewLink link" id="view_player2">Player 2</li>
+                    <li class="viewLink link" id="view_scoreboard">
+                        <a href="/scoreboard.html?game_id=">Scoreboard</a>
+                    </li>
+                    <li class="viewLink link" id="view_player1">
+                        <a href="/phoneview.html?player=p1&game_id=">Player 1</a>
+                    </li>
+                    <li class="viewLink link" id="view_player2">
+                        <a href="/phoneview.html?player=p2&game_id=">Player 2</a>
+                    </li>
                 </ul>
             </div>
         </div>
