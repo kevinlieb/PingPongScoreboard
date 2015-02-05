@@ -17,7 +17,11 @@
             <div id="join_game_cont" class="container" align="center">
                 <h1>Join Game</h1>
                 <div id="join_game_list">
-                    <table class="reference">
+                    <table class="reference" cellspacing="20x">
+                        <tr>
+                            <th>Select Game</th>
+                            <th>Score</th>
+                        </tr>
                         <tbody class="join_game_container">
                             <tr class="join_game_template">
                                 <td>
@@ -33,18 +37,15 @@
         <div id="choice_dialog" class="hidden container">
             <h1>Choose View</h1>
             <div id="view_options_list">
-                <ul>
-<!--                    <li class="viewLink link" id="view_allTheThings">All The Things</li> -->
-                    <li class="viewLink link" id="view_scoreboard">
-                        <a href="/scoreboard.html?game_id=">Scoreboard</a>
-                    </li>
-                    <li class="viewLink link" id="view_player1">
-                        <a href="/phoneview.html?player=p1&game_id=">Player 1</a>
-                    </li>
-                    <li class="viewLink link" id="view_player2">
-                        <a href="/phoneview.html?player=p2&game_id=">Player 2</a>
-                    </li>
-                </ul>
+                <button class="button-reset">
+                    <a class="no-link" href="/scoreboard.html?game_id=">Scoreboard</a>
+                </button>
+                <button class="button-reset">
+                    <a class="no-link" href="/phoneview.html?player=p1&game_id=">Player 1</a>
+                </button>
+                <button class="button-reset">
+                    <a class="no-link" href="/phoneview.html?player=p2&game_id=">Player 2</a>
+                </button>
             </div>
         </div>
 

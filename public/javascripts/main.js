@@ -11,7 +11,7 @@ $(document).ready(function () {
 				i;
 			for (i = 0; i < gamesList.length; i++) {
 				game = gamesList[i];
-				newGamesListNode = gamesListItemTemplate.clone().html('<td><a class="joinLink link" data-game-id="' + game.id + '">game ' + game.id + ', currently ' + game.P1 + ' - ' + game.P2 + '</a></td>');
+				newGamesListNode = gamesListItemTemplate.clone().html('<td><button class="button-reset"><a class="joinLink" data-game-id="' + game.id + '">Game ' + game.id + '</a></button></td><td>Player 1 - ' + game.P1 + ' : ' + game.P2 + ' - Player 2</td>');
 				container.append(newGamesListNode);
 			}
 		}
