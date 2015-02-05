@@ -36,7 +36,7 @@ $(document).ready(function () {
 	}
 
 	$('#new_game_cont button').click(newGameDialog);
-	$('.joinLink').click(function(evt) {
+	$('.join_game_container').on('click', '.joinLink', function(evt) {
 		var game_id = $(this).data('game-id');
 		showViewDialog(game_id);
 	});
