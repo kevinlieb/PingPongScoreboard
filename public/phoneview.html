@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="stylesheets/main.css">
     </head>
     <body style="margin:0px">
+        <audio id="sound" src="sounds/beep.mp3"></audio>
         <div class="phone-div">
-                <button class="phone-button-increment"></button>
+                <button class="phone-button-increment" onclick="$('#sound')[0].play()"></button>
                 <button class="phone-button-decrement"></button>
         </div>
         <script src="javascripts/plugins.js"></script>
