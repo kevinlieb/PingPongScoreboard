@@ -20,12 +20,13 @@ or
 ```
 {"P1:"-"} 
 ```
-to decrement score for player 1
-or
+
+To reset scores:
+
 ```
 {"reset":true}
 ```
-or
+or undo the reset:
 ```
 {"undoReset":true}
 ```
