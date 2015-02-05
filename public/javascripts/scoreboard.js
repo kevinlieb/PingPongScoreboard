@@ -27,7 +27,21 @@ $(document).ready(function () {
 		$.post('/score/' + gameId, data, function(s) {
 			refreshScores()
 		});
-	})
+	});
+
+	$('.button-reset').click(function() {
+		$.post('/score/' + gameId, {reset: true}, function(s) {
+			console.log('reset!!')
+			refreshScores()
+		});
+	});
+
+	$('.button-undo').click(function() {
+		$.post('/score/' + gameId, {undoReset: true}, function(s) {
+			console.log('undo!!')
+			refreshScores()
+		});
+	});
 
 	setInterval(refreshScores, 1000);
 	refreshScores()
