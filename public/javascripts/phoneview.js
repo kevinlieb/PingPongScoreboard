@@ -18,4 +18,10 @@ $(document).ready(function () {
 			console.log('incremented!');
 		});
 	})
+	$('.phone-button-reset').click(function() {
+		$.post('/score/' + gameId, {reset: true}, function(s) {
+			console.log('reset!!')
+			refreshScores()
+		});
+	});
 });

@@ -9,7 +9,10 @@
         <audio id="sound" src="sounds/beep.mp3"></audio>
         <div class="phone-div">
                 <button class="phone-button-increment" onclick="$('#sound')[0].play()"></button>
-                <button class="phone-button-decrement"></button>
+                <div class="two-buttons" align="left">
+                    <button class="phone-button-decrement">-</button>
+                    <button class="phone-button-reset">Reset</button>
+                </div>
         </div>
         <script src="javascripts/plugins.js"></script>
         <script src="javascripts/main.js"></script>
