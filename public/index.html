@@ -20,7 +20,7 @@
                 <h1>Join Game</h1>
                 <div id="join_game_list">
                     <ul>
-                        <li class="joinLink link" id="game_101">game 101, currently 0 - 0</li>
+                        <li class="joinLink link" id="game_101" data-game-id="101">game 101, currently 0 - 0</li>
                         <li class="joinLink link" id="game_102">game 102, currently 5 - 2</li>
                         <li class="joinLink link" id="game_103">game 103, currently 1 - 6</li>
                     </ul>
@@ -33,9 +33,15 @@
             <div id="view_options_list">
                 <ul>
 <!--                    <li class="viewLink link" id="view_allTheThings">All The Things</li> -->
-                    <li class="viewLink link" id="view_scoreboard">Scoreboard</li>
-                    <li class="viewLink link" id="view_player1">Player 1</li>
-                    <li class="viewLink link" id="view_player2">Player 2</li>
+                    <li class="viewLink link" id="view_scoreboard">
+                        <a href="/scoreboard.html?game_id=">Scoreboard</a>
+                    </li>
+                    <li class="viewLink link" id="view_player1">
+                        <a href="/phoneview.html?player=p1&game_id=">Player 1</a>
+                    </li>
+                    <li class="viewLink link" id="view_player2">
+                        <a href="/phoneview.html?player=p2&game_id=">Player 2</a>
+                    </li>
                 </ul>
             </div>
         </div>
