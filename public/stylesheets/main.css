@@ -32,7 +32,7 @@ button {
   color: white;
   background-color: #1A9BFC;
   font-family: Helvetica;
-  padding: 8px 24px;
+  padding: 0px 24px;
 }
 
 button:focus {
