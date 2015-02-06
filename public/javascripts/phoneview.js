@@ -5,7 +5,7 @@ $(document).ready(function () {
 	$('.phone-button-increment').click(function() {
 		var data = {};
 		data[player] = '+';
-		$.post('/score/' + gameId, data, function(s) {
+		$.post('score/' + gameId, data, function(s) {
 			console.log('incremented!');
 		});
 	});
@@ -14,12 +14,12 @@ $(document).ready(function () {
 	$('.phone-button-decrement').click(function() {
 		var data = {};
 		data[player] = '-';
-		$.post('/score/' + gameId, data, function(s) {
+		$.post('score/' + gameId, data, function(s) {
 			console.log('incremented!');
 		});
 	})
 	$('.phone-button-reset').click(function() {
-		$.post('/score/' + gameId, {reset: true}, function(s) {
+		$.post('score/' + gameId, {reset: true}, function(s) {
 			console.log('reset!!')
 			refreshScores()
 		});

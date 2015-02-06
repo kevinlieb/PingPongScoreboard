@@ -2,7 +2,7 @@ $(document).ready(function () {
 	var gameId = getUrlParameter('game_id');
 
 	function refreshScores() {
-		$.get('/score/' + gameId).done(function(data) {
+		$.get('score/' + gameId).done(function(data) {
 			$('.p1-score').text(data.P1);
 			$('.p2-score').text(data.P2);
 			console.log('refreshed!')
@@ -14,7 +14,7 @@ $(document).ready(function () {
 		var player = $(this).data('player');
 		var data = {};
 		data[player] = '+';
-		$.post('/score/' + gameId, data, function(s) {
+		$.post('score/' + gameId, data, function(s) {
 			refreshScores()
 		});
 	});
@@ -24,20 +24,20 @@ $(document).ready(function () {
 		var player = $(this).data('player');
 		var data = {};
 		data[player] = '-';
-		$.post('/score/' + gameId, data, function(s) {
+		$.post('score/' + gameId, data, function(s) {
 			refreshScores()
 		});
 	});
 
 	$('.button-reset').click(function() {
-		$.post('/score/' + gameId, {reset: true}, function(s) {
+		$.post('score/' + gameId, {reset: true}, function(s) {
 			console.log('reset!!')
 			refreshScores()
 		});
 	});
 
 	$('.button-undo').click(function() {
-		$.post('/score/' + gameId, {undoReset: true}, function(s) {
+		$.post('score/' + gameId, {undoReset: true}, function(s) {
 			console.log('undo!!')
 			refreshScores()
 		});

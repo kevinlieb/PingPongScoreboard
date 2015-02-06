@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 	var gamesListItemTemplate = $('.join_game_template').remove();
 
-	$.get('/list', function (gamesList) {
+	$.get('list', function (gamesList) {
 		if (gamesList && gamesList.Games && gamesList.Games.length) {
 			gamesList = gamesList.Games;
 			var container = $('.join_game_container'),
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 	function newGameDialog() {
 		$.ajax({
-			url: '/new',
+			url: 'new',
 			type: 'PUT'
 		}).done(function(s) {
 			showViewDialog(s.ok);
